@@ -28,6 +28,10 @@ targetCompatibility = 1.8
 //添加编译时的依赖
 dependencies {
     compile ("org.springframework.boot:spring-boot-starter-data-mongodb")
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+    compile "org.springframework.boot:spring-boot-starter-security"
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

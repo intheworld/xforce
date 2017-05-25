@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Xforce</title>
+    <link rel="stylesheet"
+          type="text/css"
+          th:href = "@{/style/bootstrap-3.3.7-dist/css/bootstrap.min.css}" />
+
+    <link rel="stylesheet" type="text/css" th:href = "@{/style/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href = "@{/style/normalize.css}" ></link>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script th:src="@{/style/bootstrap-3.3.7-dist/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div id="site-menu" th:include="page :: nav"></div>
+
+<div id="content" class="row">
+<!--    <div class="spittleForm">
+        <h1>Spit it out...</h1>
+        <form method="POST" name="spittleForm">
+            <input type="hidden" name="latitude" />
+            <input type="hidden" name="longitude" />
+            <textarea name="message" cols="80" rows="5"></textarea><br/>
+            <input type="submit" value="Add" />
+        </form>
+    </div>-->
+    <div class="listTitle col-xs-6 col-md-offset-3"
+         style="background-color: #dedef8;box-shadow:
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+        <h1>Recent Articles</h1>
+        <ul class="list-group">
+            <li class="list-group-item" th:each="article : ${articleList}"
+                th:id="'article_' + ${article.id}">
+                <h3 class="articleTitle" th:text="${article.articleTitle}">Article Title</h3>
+
+                <p class="articleAbstract" th:text="${article.articleContent}">Article Content</p>
+                <div>
+                    <span class="articleTime" th:text="${article.publishDateTime}">Article Timestamp</span>
+                    <span class="articleSource" th:text="${article.articleSourceName}">Article Source</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div id="footer" th:include="page :: copy"></div>
+</div>
+</body>
+</html>

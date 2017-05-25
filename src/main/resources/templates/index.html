@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Xforce</title>
+    <link rel="stylesheet"
+          type="text/css"
+          th:href = "@{/style/bootstrap-3.3.7-dist/css/bootstrap.min.css}" />
+
+    <link rel="stylesheet" type="text/css" th:href = "@{/style/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href = "@{/style/normalize.css}" ></link>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script th:src="@{/style/bootstrap-3.3.7-dist/js/bootstrap.min.js}"></script>
+</head>
+<body id="thymeleaf-home">
+
+<div id="site-menu" th:include="page :: nav"></div>
+
+
+<header class="hero-header fluid-block">
+    <div class="hero-header-text">
+        <h1 class="hero-header-title">Xforce</h1>
+    </div>
+    <div class="hero-header-image">
+        <img th:src="@{/image/thymeleaf.png}" class="hero-header-logo"/>
+    </div>
+</header>
+
+<div id="content" class="container">
+
+    <h1>Welcome to Xforce</h1>
+
+    <a th:href="@{/articles}">Articles</a> |
+    <a th:href="@{/users/register}">Register</a>
+
+    <br/>
+
+</div>
+<div class="container">
+    <div id="footer" th:include="page :: copy"></div>
+</div>
+</body>
+</html>

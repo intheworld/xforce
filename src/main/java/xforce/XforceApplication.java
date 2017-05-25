@@ -28,8 +28,8 @@ public class XforceApplication implements CommandLineRunner {
         repository.deleteAll();
 
         // save a couple of customers
-        repository.save(new User("Alice", 12));
-        repository.save(new User("Bob", 19));
+        repository.save(new User("Alice", "password", "alice@google.com", 12));
+        repository.save(new User("Bob", "password", "bob@facebook.com", 19));
 
         // fetch all customers
         System.out.println("Customers found with findAll():");
@@ -38,10 +38,9 @@ public class XforceApplication implements CommandLineRunner {
             System.out.println(user);
         }
         System.out.println();
-
         System.out.println("Customer found with findByFirstName('Alice'):");
         System.out.println("--------------------------------");
-        System.out.println(repository.findByUsername("Alice"));
+        System.out.println(repository.findByUsername("Alice").getUsername());
     }
 
 }

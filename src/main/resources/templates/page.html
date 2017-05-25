@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+  <body>
+   	<div th:fragment="nav">
+		<div class="container page-header">
+			<ul class="nav nav-pills">
+			  <li class="active"><a th:href="@{/#}">Home</a></li>
+			  <li><a th:href="@{/#}">Stack Overflow</a></li>
+			  <li><a th:href="@{/#}">Google Developer</a></li>
+			  <li><a th:href="@{/#}">About</a></li>
+			</ul>	
+		</div>
+	</div>   
+  
+    <div th:fragment="header">
+      <a th:href="@{/}">
+        <img th:src="@{/resources/img/spitter_logo_50.png}" border="0" /></a>
+    </div>
+
+    <div>Content goes here</div>
+
+    <div th:fragment="copy">Copyright &copy; intheworld</div>
+  </body>
+  
+</html>
